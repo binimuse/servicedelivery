@@ -50,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
             ),
             const Text(
-              "Service Delivery",
+              "PFS",
               style: TextStyle(
                 fontSize: 18.0,
                 fontFamily: 'WorkSans',
@@ -60,7 +60,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 color: kPrimaryColor,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
           ]),

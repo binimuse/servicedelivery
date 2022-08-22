@@ -53,18 +53,6 @@ class _WebViewExampleState extends State<Main> {
               ),
             ),
           ),
-          title: Container(
-            padding: const EdgeInsets.only(top: 20, bottom: 10),
-            child: const Text(
-              "Service Delivery ",
-              style: TextStyle(
-                color: kPrimaryColor,
-                fontSize: 12,
-                fontWeight: FontWeight.w600,
-                fontFamily: 'WorkSans',
-              ),
-            ),
-          ),
           actions: <Widget>[
             NavigationControls(_controller.future),
             SampleMenu(_controller.future),
@@ -77,7 +65,7 @@ class _WebViewExampleState extends State<Main> {
           child: Builder(builder: (BuildContext context) {
             return Stack(children: <Widget>[
               WebView(
-                initialUrl: 'https://service.ethiopianvictory.com/',
+                initialUrl: 'http://pfs.mols.gov.et',
                 javascriptMode: JavascriptMode.unrestricted,
                 onWebViewCreated: (WebViewController webViewController) {
                   _controller.complete(webViewController);
@@ -116,7 +104,7 @@ class _WebViewExampleState extends State<Main> {
                 backgroundColor: const Color(0x00000000),
               ),
               isLoading
-                  ? Center(
+                  ? const Center(
                       child: CircularProgressIndicator(),
                     )
                   : Stack(),
@@ -197,45 +185,6 @@ class NavigationControls extends StatelessWidget {
         final WebViewController? controller = snapshot.data;
         return Row(
           children: <Widget>[
-            // IconButton(
-            //   icon: const Icon(
-            //     Icons.arrow_back_ios,
-            //     color: kPrimaryColor,
-            //   ),
-            //   onPressed: !webViewReady
-            //       ? null
-            //       : () async {
-            //           if (await controller!.canGoBack()) {
-            //             await controller.goBack();
-            //           } else {
-            //             // ignore: deprecated_member_use
-            //             Scaffold.of(context).showSnackBar(
-            //               const SnackBar(content: Text('No back history item')),
-            //             );
-            //             return;
-            //           }
-            //         },
-            // ),
-            // IconButton(
-            //   icon: const Icon(
-            //     Icons.arrow_forward_ios,
-            //     color: kPrimaryColor,
-            //   ),
-            //   onPressed: !webViewReady
-            //       ? null
-            //       : () async {
-            //           if (await controller!.canGoForward()) {
-            //             await controller.goForward();
-            //           } else {
-            //             // ignore: deprecated_member_use
-            //             Scaffold.of(context).showSnackBar(
-            //               const SnackBar(
-            //                   content: Text('No forward history item')),
-            //             );
-            //             return;
-            //           }
-            //         },
-            // ),
             IconButton(
               icon: const Icon(
                 Icons.replay,
